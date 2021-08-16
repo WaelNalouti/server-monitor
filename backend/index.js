@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import MemoryDAO from "./DAO/MemoryDAO.js";
 import DiskDAO from "./DAO/DiskDAO.js";
 import IfacesDAO from "./DAO/IfacesDAO.js";
@@ -11,6 +12,7 @@ dotenv.config();
 const port = process.env.PORT || 8000;
 const url = process.env.BASE_URL;
 //applying middleware
+app.use(cors());
 app.use(express.json()); //the server can accept json in the body of the request
 
 let stats = {
@@ -18,7 +20,7 @@ let stats = {
   host: "",
   os: "",
   localNetwork: {},
-  Ifaces:{},
+  Ifaces: {},
   RAM: {},
   DISK: {},
 };
@@ -29,7 +31,7 @@ stats.os = os.platform() + " @ " + os.release();
 await IfacesDAO.getNetworkInterfaces().then((networks) => {
   stats.localNetwork = networks.NETWORK;
   stats.Ifaces = networks.connectedIfaces;
-})
+});
 
 await MemoryDAO.getMemoryInfo().then(
   (memory) => {

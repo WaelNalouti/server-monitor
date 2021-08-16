@@ -1,0 +1,38 @@
+.main {
+  margin: 20px;
+}
+
+.main__container {
+  margin: 20px 0px;
+  width: 100%;
+  position: relative;
+}
+
+/* style for alerts */
+.alerts {
+  position: absolute;
+  top: 60vh;
+  right: 0;
+  height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.alert--box {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px !important;
+  font-family: "Space Grotesk", sans-serif !important;
+  margin-top: 10px;
+  min-width: 500px !important;
+}
+
+.main__stats {
+  margin: 20px 0px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}

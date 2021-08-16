@@ -1,0 +1,37 @@
+.stats {
+  border-left: 3px solid lightgray;
+  padding: 10px 30px;
+  max-width: 50%;
+  min-width: 400px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-right: 60px;
+}
+
+.stats__usage {
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+}
+
+.stats__usage h1 {
+  margin-right: 5px;
+}
+
+.stats__more {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stats__more--data {
+  text-align: left;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.stats__more--data span {
+  font-weight: 600;
+  font-size: 17px;
+}

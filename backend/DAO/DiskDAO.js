@@ -1,16 +1,16 @@
 import checkDiskSpace from "check-disk-space";
 
 let disk = {
-  diskpath: "No disk found",
-  free: null,
-  size: null,
-  percentUsage: null,
+  diskpath: "😕No disk found",
+  free: "N/A",
+  size: "N/A",
+  percentUsage: "N/A",
 };
 
 export default class DiskDAO {
   static async getDiskInfo() {
     try {
-      checkDiskSpace("C:/").then((diskSpace) => {
+      checkDiskSpace("D:/").then((diskSpace) => {
         disk.diskpath = diskSpace.diskPath;
         disk.free = (diskSpace.free / 1024 / 1024 / 1024).toFixed(2) + " GB";
         disk.size = (diskSpace.size / 1024 / 1024 / 1024).toFixed(2) + " GB";
